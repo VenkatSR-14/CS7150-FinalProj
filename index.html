@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <title>Your Project Name</title>
-<meta property="og:title" content=Your Project Name" />
-<meta name="twitter:title" content="Your Project Name" />
+<meta property="og:title" content="Vision Transformers" />
+<meta name="twitter:title" content="Vision Transformers" />
 <meta name="description" content="Your project about your cool topic described right here." />
 <meta property="og:description" content="Your project about your cool topic described right here." />
 <meta name="twitter:description" content="Your project about your cool topic described right here." />
@@ -18,6 +18,39 @@
 <link href="style.css" rel="stylesheet">
 
 </head>
+<style>
+  /* Style to ensure the table takes full width */
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      border: none;
+  }
+
+  /* Style for table cells */
+  td {
+      border: 1px solid black;
+      text-align: center;
+      vertical-align: middle;
+      border: none;
+  }
+
+  /* Style to center the image in the left column */
+  .image-cell {
+      width: 50%;
+  }
+
+  .image-cell img {
+      max-width: 100%;
+      height: auto;
+  }
+
+  /* Style for the right column */
+  .details-cell {
+      width: 50%;
+      text-align: left;
+      padding: 10px;
+  }
+</style>
 <body class="nd-docs">
 <div class="nd-pageheader">
  <div class="container">
@@ -31,33 +64,644 @@
 <div class="container">
 <div class="row">
 <div class="col justify-content-center text-center">
-<h2>An Analysis of An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale</h2>
-<p>Describe the paper and the big question about it that interests you.</p>
-</div>
-</div>
-<div class="row">
-<div class="col">
+<h2><strong>An Analysis of "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"</strong></h2><br>
 
-<h2>Literature Review; Biography; Social Impact; Industry Applications; Follow-on Research; and Peer-Review</h2>
+<h3 style="text-align: justify;"><strong>Overview</strong></h3><br>
+<h5 style="text-align:justify"><strong>Background</strong></h5>
+<p style="text-align:justify">Traditionally, Convolutional Neural Networks (CNNs) have been the go-to model for tasks in image recognition due to their ability to capture spatial hierarchies and patterns in image data.
+   However, this paper proposes a different approach by adapting the Transformer architecture, which has seen great success in NLP, for image recognition tasks.</p>
+<h5 style="text-align:justify"><strong>The Big Question</strong></h5>
+<p style="text-align:justify">This paper seeks to address 
+  the crucial inquiry: Are Transformer models, renowned for 
+  their success in natural language tasks, equally capable and 
+  efficient when applied to image recognition—a field where 
+  Convolutional Neural Networks (CNNs) have been the standard? 
+  Moreover, can the attention mechanism, typically limited to 
+  the final stages within CNNs, be fully integrated throughout 
+  all layers of Vision Transformers (ViTs) to effectively harness 
+  the global interrelations between image components?
+  to capture the global dependencies between them.</p>
+<h5 style="text-align:justify"><strong>Core Idea</strong></h5>
+<p style="text-align:justify">The core idea of the paper is encapsulated in its title, "Image is Worth 16x16 Words". Here, the authors draw a parallel between words in NLP and image patches. 
+  The paper suggests treating each 16x16 pixel patch of an image as an analogous entity to a word in a sentence. 
+  These patches are then processed through a series of Transformer blocks (similar to those used in NLP models like BERT or GPT) 
+  to capture the global dependencies between them.</p>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./NK_ViT.png" alt="DeTr" height="300" width="750">
+      <figcaption>Figure 1:Image Encoding process</figcaption>
+    </figure>
+  </div>
+  <br><br>
+  <h3 style="text-align:justify"><strong>Biography</strong></h3>
+  <br>
+  <table>
+    <tr>
+      <td>
+          <strong>Author</strong>
+      </td>
+      <td>
+          <strong>Details</strong>
+      </td>
+    </tr>
+    <tr>
+        <td class="image-cell">
+            <img src="./Alexey Dosovitsky.png" alt="Description of Image">
+            <p><strong>Alexey Dosovitsky</strong></p>
+        </td>
+        <td class="details-cell">
+          <p style="text-align:justify">
+          Alexey Dosovitsky is a Staff Research Scientist at Google, previously a Research Scientist at Intel Labs, and has worked as an AI engineer. He was a Deep Learning Intern at Google and focuses on Neural Networks, Computer Vision, and Unsupervised Machine Learning.
+            Alexey Dosovitsky's research work has been cited 65958 times.
+          </p>  
+          </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150" src="./Lucas Beyer.png" alt="Description of Image">
+          <p><strong>Lucas Beyer</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify">Lucas Beyer is a Staff Research Engineer at Google Brain, with prior experience as a Research Assistant at RWTH Aachen University. He has also worked as an AI engineer and Deep Learning Intern at Google, specializing in Deep Representation Learning.
+          Lucas Beyer's research work has been cited 37085 times.
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150" src="./Alexandar A Kolesnikov.png" alt="Description of Image">
+          <p><strong>Alexander A Kolesnikov</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify">Alexander A Kolesnikov is a Research Scientist at Google Deepmind. He holds a Ph.D. in Applied Mathematics from the Institute of Science and Technology Austria, with interests in AI, Machine Intelligence, and Machine Perception.
+          Alexander A Kolesnikov's research work has been cited 38391	 times.
+          </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img src="./Dirk WeiBenborn.png" width="175" height="150" alt="Description of Image">
+          <p><strong>Dirk Weissenborn</strong></p>
+      </td>
+      <td class="details-cell">
+          <p style="text-align:justify">Dirk Weissenborn is part of the technical staff at Inceptive and a Research Scientist at Google. He earned his Master's in Computer Science from the Technical University of Dresden and is interested in building biological software and AI.
+          Dirk Weissenborn's research work has been cited 28603	times.
+          </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150" src="./Xiahao.png" alt="Description of Image">
+          <p><strong>Xiaohua Zhai</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify">Xiaohua Zhai is a Senior Staff Researcher at Google, previously a software engineer. He has a Ph.D. in Electronics and Computer Science from Peking University, focusing on Self-Supervised Learning, Representation Learning, Generative AI, and Transfer Learning.
+          Xiaohua Zhai's research work has been cited 35471	times.
+          </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150" src="./Thomas Untherthiner.png" alt="Description of Image">
+          <p><strong>Thomas Unterthiner</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify">Thomas Unterthiner is a Research Scientist at the Google Brain Team, with interests in Machine Learning, Deep Learning, Neural Networks, and Bioinformatics.
+          Thomas Unterthiner's research work has been cited 51478		 times.
+          </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img src="./Mostafa.png" width="175" height="150"  alt="Description of Image">
+          <p><strong>Mostafa Dehghani</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify"> Mostafa Dehghani is a Research Scientist at Google and has also worked with Apple. His research interests include Machine Learning and Deep Learning.
+          Mostafa Dehghani's research work has been cited 33614	times.
+          </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150"  src="./Matthias Minderer.png" alt="Description of Image">
+          <p><strong>Matthias Minderer</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify">Matthias Minderer is a Senior Research Scientist at Google. He completed his Ph.D. in Neuroscience at Harvard University and a Master's Degree at ETH Zurich. His fields of interest include Representation Learning, Unsupervised Learning, Object Detection, and Vision-Language Models.
+          Matthias Minderer's research work has been cited 27314 times.
+        </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img src="./Georg.png" width="175" height="150" alt="Description of Image">
+          <p><strong>Georg Heigold</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify"> Georg Heigold is a Research Scientist at Google Inc. He holds a Diploma in Physics from ETH Zurich and has worked as a Software Engineer. His interests include Speech Recognition and Machine Learning.
+          Georg Heigold's research work has been cited 33383 times.
+       </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img width="175" height="150" src="./Sylvian.png" alt="Description of Image">
+          <p><strong>Sylvain Gelly</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify"> Sylvain Gelly leads the Google Brain Zurich team as a Deep Learning Researcher. He has previously worked as a Software Engineer and specializes in Neural Networks, Computer Vision, and Unsupervised Machine Learning.
+          Neil Houlsby's research work has been cited 41314 times.
+        </p>
+        </td>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img src="./Jakob.png" width="175" height="150" alt="Description of Image">
+          <p><strong>Jakob Uszkoreit</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify"> Jakob Uszkoreit is the CEO and Co-founder of Inceptive and a Senior Staff Software Engineer at Google. He has worked at Acrolinx and has interned at Google. His interests lie in learning life's languages through deep learning.
+          Jakob Uszkoreit's research work has the highest number of citations with a count of 144900.
+       </p>
+        </td>
+    </tr>
+    <tr>
+      <td class="image-cell">
+          <img src="./neil houslby.png" width="175" height="150" alt="Description of Image">
+          <p><strong>Neil Houlsby</strong></p>
+      </td>
+      <td class="details-cell">
+        <p style="text-align:justify"></p>  Neil Houlsby is a Staff Research Scientist at Google. He completed his Ph.D. and M.Eng at the University of Cambridge and is interested in AI/ML, Computer Vision, and NLP.
+          Neil Houlsby's research work has been cited 37,840 times.
+      </p>
+        </td>
+    </tr>
+  </table>
+  <br><br>
+<h3 style="text-align:justify"><strong>Literature Review</strong></h3> 
+<img src = "./hierarchy_literature_review.png">
+<h5 style="text-align: justify;"><strong>Convolutional Neural Networks</strong></h5>
+<p style="text-align: justify;">While CNNs [1] are adept at capturing hierarchical features, 
+  their fixed-size receptive fields may struggle with capturing 
+  fine-grained details or handling variations in object scales. 
+  Additionally, weight sharing, while beneficial for translation
+   invariance, can be limiting when dealing with more complex 
+   spatial relationships. The application of attention mechanisms 
+   in the last few layers introduces computational overhead, 
+   potentially making the model more resource intensive. 
+   Moreover, attention mechanisms might not effectively capture 
+   long-range dependencies, hindering their ability to understand 
+   global context in larger images. In certain cases, CNNs with 
+   attention may suffer from interpretability issues, 
+   making it challenging to understand and trust the decision-making 
+   process. Despite their successes, addressing these cons 
+  remains an ongoing area of research in the field of computer vision. </p>
+  <br>
+  <h5 style="text-align: justify;"><strong>Residual Networks</strong></h5>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./Resnets.png" alt="DeTr" height="300" width="750">
+      <figcaption>Figure 2: ResNet Architecture.</figcaption>
+    </figure>
+  </div>
+  <br>
+<p style="text-align: justify;">Residual Neural Networks (ResNets) [2] 
+  improve upon traditional Convolutional Neural Networks 
+  (CNNs) by addressing the challenge of vanishing gradients 
+  during deep network training. ResNets introduce residual 
+  connections, allowing information to bypass certain layers 
+  and be directly transmitted to subsequent layers. 
+  This mitigates the degradation problem, enabling the 
+  training of exceedingly deep networks. ResNets excel in 
+  capturing intricate features and hierarchical representations, 
+  making them well-suited for complex image processing tasks. 
+  This architectural innovation has proven to be instrumental in 
+  achieving state-of-the-art performance in various computer vision 
+  tasks [3], surpassing the depth limitations of conventional CNNs 
+  and enhancing the overall 
+  efficiency and accuracy of deep learning models for image analysis.  </p>
+  <br>
+  <h5 style="text-align: justify;"><strong>Detection Transformers</strong></h5>
 
-<p>Just as we have done in the role-playing exercise, analyze the paper from all perspectives.
+
+
+
+<p style="text-align: justify;">Detection Transformers, such as the 
+  popular models like DETR (DEtection TRansformer), represent a 
+  paradigm shift in object detection compared to traditional
+   methods like CNN-based approaches. Detection Transformers 
+   leverage the Transformer architecture, originally designed 
+   for sequence-to-sequence tasks, to directly predict object 
+   instances in an image. They replace the conventional 
+   anchor-based methods with a set-based prediction approach, 
+   where each object is considered independently. This eliminates 
+  the need for predefined anchor boxes and improves adaptability to 
+  different object scales and aspect ratios. Additionally, Detection 
+  Transformers incorporate self-attention mechanisms, enabling them 
+  to capture global context efficiently. Two ingredients are 
+  essential for direct set predictions in detection: (1) a set 
+  prediction loss that forces unique matching between predicted and 
+  ground truth End-to-End Object Detection with Transformers 5 boxes; 
+  (2) an architecture that predicts (in a single pass) a set of 
+  objects and models their relation [4]. 
+ </p> <p style="text-align: justify;">
+  Also, Figure 3 explains the architecture of DETR in detail. 
+  DETR uses a conventional CNN backbone to learn a 2D representation 
+  of an input image. The model flattens it and supplements it with a 
+  positional encoding before passing it into a transformer encoder. 
+  A transformer decoder then takes as input a small fixed number of
+   learned positional embeddings, which we call object queries, and 
+   additionally attends to the encoder output. We pass each output 
+   embedding of the decoder to a shared feed forward network (FFN) 
+   that predicts either a detection (class and bounding box) or a “no object” class [4].  
+  </p>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./Detail_detr.png" alt="DeTr" height="300" width="750">
+      <figcaption>Figure 3: Detection Transformer Architecture In Depth.</figcaption>
+    </figure>
+  </div>
+  <h3 style="text-align: justify";><strong>Methodology</strong></h3>
+  <br>
+  <h5 style="text-align: justify;"><strong>Vision Transformers</strong></h5>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./Vision_Transformer_architecture.png" alt="Vision Transformer Architecture" height="400" width="800">
+      <figcaption>Figure 4: The Vision Transformer architecture.</figcaption>
+    </figure>
+  </div>
+
+<p style="text-align: justify;">
+  Vision Transformer (ViT) is a model that applies the Transformer 
+  architecture to image classification tasks, treating images as 
+  sequences of patches. Unlike traditional CNNs, ViT lacks explicit
+   convolutional layers and relies on self-attention mechanisms for
+    global context understanding. In contrast to Detection 
+    Transformers (such as DETR), which focuses on object detection, 
+    ViT is primarily designed for image classification. 
+    ViT's attention-based approach allows it to capture long-range 
+    dependencies and relationships within the image, offering a 
+    different paradigm for visual information processing compared to
+   both CNNs and object detection-oriented transformers like DETR.  
+ </p> 
+ <p style="text-align: justify;">
+  The Vision Transformer (ViT) architecture divides an input image 
+  into non-overlapping patches, linearly embeds them, and then treats
+   them as sequences. These patch embeddings are passed through a 
+   stack of Transformer encoder blocks, facilitating self-attention
+    mechanisms to capture global relationships. The positional 
+    embeddings maintain spatial information. ViT employs a 
+    classification head on top of the final sequence output, 
+    enabling it to perform image classification tasks effectively 
+    without relying on traditional convolutional layers. 
+  </p>
+  <p style="text-align: justify;">
+    The Vision transformer model consists of different variants (Table 1).  
+    </p>
+    <div style="text-align: center;">
+    <figure>
+      <img src="./Variants_Vision Transformer.png" alt="Vision Transformer Architecture" height="200" width="600">
+      <figcaption>Table 1: Architecture Details of the variants of Vision Transformers</figcaption>
+    </figure>
+  </div>
+  <p style="text-align: justify;">
+    In comparing the largest Vision Transformer (ViT) models, 
+    ViT-H/14 and ViT-L/16, to state-of-the-art convolutional neural 
+    networks (CNNs) like Big Transfer (BiT) and Noisy Student,
+     noteworthy distinctions emerge. ViT-L/16, trained on JFT-300M, 
+     outperforms BiT-L on diverse tasks while demanding substantially
+      fewer computational resources for pre-training. The larger 
+      ViT-H/14 model further enhances performance, particularly on 
+      challenging datasets like ImageNet, CIFAR-100, and VTAB suite. 
+      Table 2 presents a comprehensive overview of accuracy and 
+      computational efficiency across benchmarks, highlighting ViT 
+      models' superior efficiency. Moreover, Figure 5 dissects VTAB 
+      performance across different task groups, 
+      demonstrating ViT-H/14's superiority over previous methods in 
+      Natural and Structured tasks. The study underscores ViT models'
+       efficiency in achieving competitive results with reduced 
+       pre-training compute, contributing valuable insights into 
+       architecture's impact on performance 
+    and computational efficiency in image classification benchmarks. 
+  </p>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./Output_Vision_transformer.png" alt="Vision Transformer Output" height="200" width="600">
+      <figcaption>Table 2: Comparing the output of Vision Transformers with other CNN Models a
+        cross different datasets</figcaption>
+    </figure>
+  </div>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./Vision_Transformer_VTAB.png" alt="VTAB" height="200" width="600">
+      <figcaption>Figure 5: Breakdown of VTAB performance in Natural, Specialized, and Structured task  groups</figcaption>
+    </figure>
+  </div>
+  <p style="text-align: justify;">
+    The study investigates the impact of dataset size on Vision 
+    Transformer (ViT) performance through two sets of experiments.
+     Pre-training ViT models (Fig. 3) on increasingly larger 
+     datasets—ImageNet, ImageNet-21k, and JFT-300M—reveals that 
+     ViT-Large models, when pre-trained on ImageNet, underperform 
+     compared to ViT-Base models. However, their performance becomes 
+     comparable with ImageNet-21k pre-training and significantly 
+     improves with JFT-300M pre-training. Linear few-shot evaluations
+      on ImageNet (Fig. 4) demonstrate that ViT outperforms ResNets
+       and Hybrid models with larger pre-training datasets, suggesting ViT's 
+    effectiveness in capturing relevant patterns directly from data.  
+  </p>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./ViT_pre_training.png" alt="Vision Transformer Output" height="450" width="800">
+      <figcaption>Figure 6: Pre-training ViT Model on large datasets</figcaption>
+    </figure>
+  </div>
+
+<p style="text-align:justify">The paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale" is a significant work in the field of computer vision and machine learning. 
+It was authored by a team of researchers at Google Research, including Alexey Dosovitskiy, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, Matthias Minderer, Georg Heigold, Sylvain Gelly, Jakob Uszkoreit, and Neil Houlsby.
+
+This group of authors is notable for their contributions to the advancement of machine learning and deep learning technologies, particularly at Google, which is a leading organization in AI research. 
+Many of these authors have a strong background in developing innovative AI models and have contributed to numerous influential research papers in the field. Their work, including the development of the Vision Transformer (ViT) model as presented in this paper, 
+has had a substantial impact on the way we understand and implement image recognition tasks using deep learning. Their collective expertise spans across various aspects of AI, including natural language processing, computer vision, and neural network architecture design, making them a highly regarded team in the AI research community.
 </p>
+<br>
 
-<p>Optionally, in addition to a reading-based analysis, implement the ideas of the paper in code, and report on your findings.
+<h3 style="text-align:justify"><strong>Social Impact</strong></h3>
+<br>
+
+<h5 style="text-align:justify"><strong>Positive Impacts of Visual Transformers</strong></h5>
+<br>
+<p style="text-align:justify"><strong>Enhanced Medical Diagnostics</strong></p>
+<style>
+  .image-container {
+      float: left;
+      margin-right: 10px; /* Adjust this margin as needed */
+  }
+</style>
+ <div  class="image-container">
+  <img src = "./Social_Impact_Medical_Diag.png" width="525" height="200" alt="Diag" >
+</div>
+<div class="image-container">
+  <img src="./vit_v_net_social_impact.png" alt="Image 2" width="525" height="200">
+</div>
+<div style="clear: both;"></div> 
+<img style="padding-bottom: 2px;" >
+
+<p style="text-align:justify">Visual Transformers are transforming medical diagnostics by accurately analyzing medical images like X-rays and MRIs, detecting subtle disease indicators. Their advanced AI algorithms enable early and precise diagnosis, improving treatment outcomes. This technology is vital in identifying complex 
+    conditions and enhancing personalized healthcare.</p>
+<p style="text-align:justify"><strong>Advancements in Autonomous Systems: </strong></p>
+<div style="text-align: center;">
+<img src="./Car_Social_impact.png" height = 200 width = 600 >
+</div>
+<br><br>
+<p style="text-align:justify">
+      Visual Transformers are crucial in developing sophisticated 
+      autonomous vehicles and drones, enhancing safety and efficiency in transportation. Their advanced image processing capabilities enable precise navigation and real-time decision-making, essential for the reliability of these technologies. This innovation is leading the way towards a future of safer, smarter,
+       and more efficient automated transportation systems.</p>
+
+
+
+       <h5 style="text-align:justify"><strong>Negative Impacts of Visual Transformers</strong></h5>
+       <br>
+      <div style="text-align: center;">
+       <img src = "./April_SI_Below.png" height = 200 width  = 600>
+       <img src = "./April_def.png">
+      </div>
+      <br><br>
+       <p  style="text-align:justify"><strong>Privacy Concerns </strong></p>
+<p style="text-align:justify">
+  The advanced capabilities of Visual Transformers raise concerns over unauthorized surveillance and data privacy issues, as they can be used for intrusive monitoring,
+   potentially compromising personal privacy and security.</p>
+   <p  style="text-align:justify"><strong>Bias and Ethical Issues </strong></p>
+   <p style="text-align:justify">
+    If trained on skewed data, Visual Transformers have the potential to amplify biases, particularly in applications like facial recognition. This can lead to unfair or discriminatory outcomes, challenging the fairness 
+    and ethical application of this technology.</p>
+    <br>
+<h3 style="text-align:justify"><strong>Industry Applications</strong></h3>
+<br>
+<h5 style="text-align:justify"><strong>Vision Transformers in Autonomous Vehicles</strong></h5>
+
+
+<p style="text-align:justify"><strong>Real-time Image Recognition</strong> 
+  <p style="text-align:justify">The Core of Safe Navigation
+  ViT stands as a cornerstone technology in autonomous vehicles, primarily due to its unparalleled ability in real-time image recognition. 
+  It's the technology that enables cars to "see" and "understand" their environment, much like a human driver. By processing visual data in real-time, 
+  ViT ensures that autonomous vehicles can navigate safely, recognizing and reacting to the dynamic conditions of the road.</p>
 </p>
+<br>
+  
+  <h5 style="text-align:justify"><strong>What makes ViT's so suitable for Autonomous Vehicles?</strong></h5>
+<p style="text-align:justify"><strong>Live Video Feed Analysis: </strong> One of ViT's primary roles in autonomous vehicles is to analyze live video feeds from multiple car cameras. 
+  This analysis is critical for identifying various elements on the road, such as other vehicles,
+   pedestrians, road signs, and traffic lights.</p>
+<p style="text-align:justify"><strong>Understanding Complex Scenes: </strong> Beyond mere identification, ViT interprets complex 
+  urban and rural street scenes. It's adept at understanding subtle contextual cues, like predicting a pedestrian's intent to cross the road, 
+  which is crucial for ensuring safety.</p>
+  <br>
+   <h5 style="text-align:justify"><strong>Impact on Autonomous Vehicles</strong></h5>
 
-<h3>References</h3>
+<p style="text-align:justify"><strong>Enhanced Safety and Reliability: </strong> By providing a deep and contextual understanding 
+  of the surroundings, ViT significantly improves the safety and reliability of autonomous vehicles. It acts as an additional 'set of eyes' that are always vigilant and capable of
+   processing vast amounts of visual information instantaneously.</p>
+<p style="text-align:justify"><strong>Adaptability in Various Conditions: </strong> ViT equips autonomous vehicles with the ability to adapt to different
+   environmental conditions. Whether it's navigating through a rainy night or adjusting to sudden changes in traffic, ViT 
+  ensures that the vehicle is prepared for various scenarios.</p>
+  <img class = "col justify-content-center text-center" src="./EfficientViT Street Scene Segmentation Demo.gif" width = 500 height = 500 alt="Description of GIF">
+  <br><br><br>
+  <h3 style="text-align:justify"><strong>Follow-on Research</strong></h3>
+  <br> 
+  <h5 style="text-align: justify;"><strong>Enhancing Vision transformers for varied Image Resolution</strong></h5>
+  <br> 
+  <p style="text-align: justify;">While the original paper focuses on transformer models at fixed resolutions, there's a need 
+  for comprehensive research on their performance with diverse 
+  image resolutions in real-world scenarios. 
+  Investigating adaptive scaling strategies, preserving critical 
+  information during preprocessing, and understanding the computational efficiency implications are vital for enhancing transformer versatility. Additionally, addressing low-resolution challenges through fine-tuning or architectural adjustments could prove instrumental in applications like surveillance and mobile imaging. This comprehensive approach fills a gap in the original paper, significantly improving the applicability and efficiency of transformer
+   models in image recognition tasks across varied resolutions.</p>
+    <h5 style="text-align: justify;"><strong>Progress Made to date</strong></h5>
+    <img src = "./Paper_Ar.png" width = 600 height = 300 class="col justify-content-center text-center">
+   <p style="text-align: justify;">In a proactive pursuit of solutions to the 
+    aforementioned challenges, a recent research endeavor has made notable strides. 
+    NaViT (Native Resolution ViT [5]) disrupts the conventional practice of resizing 
+    images before processing, utilizing Vision Transformer's sequence-based 
+    modeling for adaptable handling of arbitrary resolutions and aspect ratios. 
+    This innovative approach not only improves training efficiency but also exhibits superior performance across diverse computer vision tasks, signaling a departure from the standard CNN-designed
+     pipeline and showcasing a promising direction for Vision Transformers (ViTs).</p>
+     <style>
+      .image-container {
+          float: left;
+          margin-right: 10px; /* Adjust this margin as needed */
+      }
+  </style>
+     <div  class="image-container">
+      <img src="./Img1_Ar.png" alt="Image 1" width="500" height="280">
+  </div>
+  <div class="image-container">
+      <img src="./Imag2_Ar.png" alt="Image 2" width="500" height="300">
+  </div>
+  <div style="clear: both;"></div> <br>
+     <h3 style="text-align:justify"><strong>Peer-Review</strong> - Venkat Srinivasa Raghavan</h3>
+<p>
+<p style="text-align: justify;">
+The paper innovatively adapts the transformer model, predominantly 
+utilized in NLP tasks, to the realm of image classification, 
+demonstrating its verstatility beyond text-based applications.  
+It introduces a simple but effective method of transforming image 
+patches to linear embeddings, thereby repurposing the transformer 
+architecture for visual data. This signifies a substantial shift in 
+image recognition techniques,
+ highlighting the adaptabulity of transformers to diverse domains
 
-<p><a name="bottou-1990">[1]</a> <a href="https://papers.baulab.info/Bottou-1990.pdf"
+ <h5 style="text-align: justify;"><strong>Pros</strong></h5>
+  <p style="text-align: justify;">Vision Transformers (ViTs) 
+    showcase remarkable competencies, often <strong>outperforming advanced</strong>
+    CNNs, especially with extensive pre-training on large datasets. 
+    This ability to improve with more data hints at ViTs' potential 
+    to redefine image
+     recognition standards as data availability escalates.</p>
+</p>
+  <p style="text-align: justify;">ViTs maintain a straightforward 
+    transformer architecture, which translates to broader 
+    applicability across diverse vision tasks. This uniform 
+    approach could <strong>streamline model training and implementation</strong>, 
+    suggesting a 
+    versatile future for transformers in visual applications.</p>
+  <p style="text-align: justify;">The paper's detailed experimentation
+     provides a transparent evaluation of ViTs, identifying when they
+      perform best and their comparative drawbacks. 
+      This thorough approach not only clarifies ViTs' current 
+      standing in image recognition but also 
+    lays a foundation for subsequent research enhancements.</p>
+
+    <h5 style="text-align: justify;"><strong>Cons</strong></h5>
+  <p style="text-align: justify;">The paper oscillates in its
+     <strong>perspective on inductive biases</strong>, integral to CNNs for 
+     recognizing patterns irrespective of their image location.
+      It does not decisively conclude if omitting these biases 
+      benefits the transformer, leaving the model's
+     performance across various tasks somewhat ambiguous.</p>
+  <p style="text-align: justify;">The study introduces a repurposed 
+    application of transformers for image recognition, which <strong>lacks 
+    groundbreaking innovation</strong>. This reframing of existing technology 
+    into a new context raises questions about the model's novelty and
+     its ability to introduce foundational advancements in the field.</p>
+</p>
+<h5 style="text-align: justify;"><strong>Questions</strong></h5>
+  <p style="text-align: justify;">
+    How does the choice of patch size (other than the 16x16 used in 
+    the paper) affect the performance of ViT, 
+    particularly in terms of feature extraction and model efficiency?</p>
+  <p style="text-align: justify;">How robust is the ViT model against adversarial 
+    attacks compared to traditional CNNs and other state-of-the-art 
+    models, especially
+     considering its unique approach to processing images?</p>
+     <h5 style="text-align: justify;"><strong>Scores</strong></h5>
+     <p style="text-align: justify;">
+  Soundess : 4 <br> Presentation: 4 <br> Contribution: 3 <br> Overall: 7 <br> Confidence: 4
+<br>
+     <h3 style="text-align:justify"><strong>Peer-Review </strong>- Indhuja Muthu Kumar</h3>
+     <p>
+     <p style="text-align: justify;">
+     The paper innovatively adapts the transformer model, predominantly 
+     utilized in NLP tasks, to the realm of image classification, 
+     demonstrating its verstatility beyond text-based applications.  
+     It introduces a simple but effective method of transforming image 
+     patches to linear embeddings, thereby repurposing the transformer 
+     architecture for visual data. This signifies a substantial shift in 
+     image recognition techniques,
+      highlighting the adaptabulity of transformers to diverse domains
+     
+      <h5 style="text-align: justify;"><strong>Pros</strong></h5>
+       <p style="text-align: justify;">A key advantage of the attention
+         mechanism in Vision Transformers (ViT) is its ability to 
+         <strong>capture long-range dependencies</strong> across the entire image.
+         This <strong>global perspective</strong> contrasts with the local focus of 
+         traditional CNNs, enabling ViTs to better understand and 
+         integrate contextual relationships within the image, 
+        which is crucial for complex recognition tasks.</p>
+     </p>
+       <p style="text-align: justify;">The Vision Transformer (ViT) demonstrates strong <strong> transfer learning capabilities</strong>,
+         with models trained on one task showing 
+        quantitatively high performance when adapted to another. For 
+        example, a ViT pre-trained on a large dataset like ImageNet 
+        often retains high accuracy and precision when fine-tuned for 
+        different tasks, 
+        showcasing efficient feature retention and adaptability.</p>
+     
+        <h5 style="text-align: justify;"><strong>Cons</strong></h5>
+       <p style="text-align: justify;"><strong>Relies heavily on supervised  pre-training</strong>, unlike models like BERT in NLP which can leverage 
+        unlabeled data, potentially limiting its 
+        applicability in scenarios with less available labeled data.</p>
+       <p style="text-align: justify;">One consideration worth noting is 
+        that Vision Transformer (ViT) encounters 
+        challenges when applied to full images due to its difficulty in 
+        scaling to large input resolutions owing to <strong>memory constraints.</strong></p>
+     </p>
+     <h5 style="text-align: justify;"><strong>Questions</strong></h5>
+       <p style="text-align: justify;">
+        How does the Vision Transformer (ViT) perform on smaller datasets
+         compared to traditional convolutional neural networks (CNNs) and
+          BiT (ResNet), 
+        given its reliance on large-scale data for optimal performance?</p>
+       <p style="text-align: justify;">Could the authors elaborate on 
+        potential approaches and benefits of integrating more extensive
+         self-supervised learning techniques into ViT, 
+        similar to how BERT utilizes unlabeled data in NLP?</p>
+     </p>
+     <p style="text-align: justify;">How does the performance of ViT 
+      vary when confronted with diverse resolutions and computational
+       constraints, providing insights into the associated 
+       trade-offs and potential benefits?</p>
+   </p>
+   <h5 style="text-align: justify;"><strong>Scores</strong></h5>
+  <p style="text-align: justify;"> Soundess : 4 <br> Presentation: 4 <br> Contribution: 3 <br> Overall: 7 <br> Confidence: 5</p>
+   
+<br>
+
+<h3 style="text-align:justify"><strong>References</strong></h3>
+
+<p style="text-align: justify;"><a name="A framework for the cooperation of learning algorithms">[1]</a> <a href="https://proceedings.neurips.cc/paper/1990/file/a8c88a0055f636e4a163a5e3d16adab7-Paper.pdf"
   >L&eacute;on Bottou and Patrick Gallinari.
   <em>A framework for the cooperation of learning algorithms.</em></a>
   Advances in neural information processing systems 3 (1990).
+<br><br>
+  <a name="Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun, Deep Residual Learning for Image Recognition">[2]</a> <a href="https://arxiv.org/pdf/1512.03385.pdf"
+  >Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep Residual Learning for Image Recognition</em></a>
+  <br><br>
+  <a name="Sasha Targ, Diogo Almeida1, Kevin Lyman. Resnet in Resnet: Generalizing Residual Architectures">[3]</a> <a href="https://ar5iv.labs.arxiv.org/html/1603.08029"
+  >
+  <em>Sasha Targ, Diogo Almeida1, Kevin Lyman. Resnet in Resnet </em></a>
+  Generalizing Residual Architectures.
+  <br><br>
+  <a name="End-to-End Object Detection with Transformers">[4]</a> <a href="https://arxiv.org/pdf/2005.12872.pdf"
+  >
+  <em>Nicolas Carion
+    , Francisco Massa
+    , Gabriel Synnaeve, Nicolas Usunier,
+    Alexander Kirillov, and Sergey Zagoruyko. End-to-End Object Detection with Transformers
+  </em></a>
+  <br><br>
+  <a name="Patch n' Pack: NaViT">[5]</a> <a href="https://arxiv.org/pdf/2307.06304.pdf"
+  >
+  <em>Mostafa Dehghani, Basil Mustafa, Josip Djolonga, Jonathan Heek, Matthias Minderer, Mathilde Caron, 
+    Andreas Steiner, Joan Puigcerver, 
+    Robert Geirhos, Ibrahim Alabdulmohsin, Avital Oliver, Piotr Padlewski, Alexey Gritsenko, Mario Lučić, Neil Houlsby. : Patch n' Pack: NaViT
+  </em></a>
+  &nbsp;Vision Transformer for any Aspect Ratio and Resolution
+  <br><br>
+  <a name="Attention Is All You Need">[6]</a> <a href="https://arxiv.org/abs/1706.03762"
+  >
+  <em>Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin.
+     : Attention Is All You Need
+  </em></a>
 </p>
 
-<h2>Team Members</h2>
-                                                   
-<p>Venkat Srinivasa Raghavan</p>
-<p>Indhuja Muthukumar</p>
+<h2 style="text-align:justify"><strong>Team Members</strong></h2>
+<br>                                              
+<p style="text-align:justify">Venkat Srinivasa Raghavan</p>
+<p style="text-align:justify">Indhuja Muthu Kumar</p>
 
   
 </div><!--col-->
