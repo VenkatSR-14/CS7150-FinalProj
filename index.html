@@ -431,17 +431,15 @@
   </div>
   <p style="text-align: justify;">
     The initial linear embedding of RGB values in ViT-L/32 is subject to filters, while the position embeddings in the model exhibit similarity analysis. 
-    The tiles in the visual representation display the cosine similarity between the position embedding of a specific patch, denoted by its row and column, 
+    The tiles in the visual representation [Figure 7] display the cosine similarity between the position embedding of a specific patch, denoted by its row and column, 
     and the position embeddings of all other patches. Moreover, the size of the attended area by each head and the network depth are depicted, with each dot on the visualization representing the mean attention distance across images for one of the 16 heads at a particular layer. 
     This information collectively provides insights into the intricate attention mechanisms and positional relationships within the ViT-L/32 model architecture.
   </p>
   <div style="text-align: center;">
     <figure>
       <img src="./position_embedding_methodology_final.png" alt="Vision Transformer Output" height="450" width="1000">
-      <figcaption style="text-align: justify;">Figure 7: <strong>Left</strong>: Filters of the initial linear embedding of RGB values of ViT-L/32. <strong>Center</strong> : Similarity of position embeddings of ViT-L/32. Tiles show the cosine similarity between the position
-        embedding of the patch with the indicated row and column and the position embeddings of all other
-        patches. <strong>Right</strong>: Size of attended area by head and network depth. Each dot shows the mean attention
-        distance across images for one of 16 heads at one layer.</figcaption>
+      <figcaption style="text-align: justify;">Figure 7: <strong>Left</strong>: Filters of the initial linear embedding of RGB values of ViT-L/32. <strong>Center</strong> : Similarity of position embeddings of ViT-L/32.
+        patches. <strong>Right</strong>: Size of attended area by head and network depth.</figcaption>
     </figure>
   </div>
 
