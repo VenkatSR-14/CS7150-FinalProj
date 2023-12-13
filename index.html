@@ -420,8 +420,28 @@
   </p>
   <div style="text-align: center;">
     <figure>
-      <img src="./ViT_pre_training.png" alt="Vision Transformer Output" height="450" width="800">
+      <img src="./vit-pre-training-line.png" alt="Vision Transformer Output" height="450" width="1000">
+    </figure>
+  </div>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./vit-pretraining-dots.png" alt="Vision Transformer Output" height="450" width="1000">
       <figcaption>Figure 6: Pre-training ViT Model on large datasets</figcaption>
+    </figure>
+  </div>
+  <p style="text-align: justify;">
+    The initial linear embedding of RGB values in ViT-L/32 is subject to filters, while the position embeddings in the model exhibit similarity analysis. 
+    The tiles in the visual representation display the cosine similarity between the position embedding of a specific patch, denoted by its row and column, 
+    and the position embeddings of all other patches. Moreover, the size of the attended area by each head and the network depth are depicted, with each dot on the visualization representing the mean attention distance across images for one of the 16 heads at a particular layer. 
+    This information collectively provides insights into the intricate attention mechanisms and positional relationships within the ViT-L/32 model architecture.
+  </p>
+  <div style="text-align: center;">
+    <figure>
+      <img src="./position_embedding_methodology_final.png" alt="Vision Transformer Output" height="450" width="1000">
+      <figcaption style="text-align: justify;">Figure 7: <strong>Left</strong>: Filters of the initial linear embedding of RGB values of ViT-L/32. <strong>Center</strong> : Similarity of position embeddings of ViT-L/32. Tiles show the cosine similarity between the position
+        embedding of the patch with the indicated row and column and the position embeddings of all other
+        patches. <strong>Right</strong>: Size of attended area by head and network depth. Each dot shows the mean attention
+        distance across images for one of 16 heads at one layer.</figcaption>
     </figure>
   </div>
 
@@ -467,7 +487,7 @@
        <br>
       <div style="text-align: center;">
        <img src = "./April_SI_Below.png" height = 200 width  = 600>
-       <img src = "./April_def.png">
+       <img src = "./April_def.png" height = 50 width  = 300>
       </div>
       <br><br>
        <p  style="text-align:justify"><strong>Privacy Concerns </strong></p>
@@ -538,12 +558,11 @@
           margin-right: 10px; /* Adjust this margin as needed */
       }
   </style>
-     <div  class="image-container">
+     <div style="text-align: center;">
       <img src="./Img1_Ar.png" alt="Image 1" width="500" height="280">
+      <img src="./Imag2_Ar.png" alt="Image 2" width="500" height="280">
   </div>
-  <div class="image-container">
-      <img src="./Imag2_Ar.png" alt="Image 2" width="500" height="300">
-  </div>
+      
   <div style="clear: both;"></div> <br>
      <h3 style="text-align:justify"><strong>Peer-Review</strong> - Venkat Srinivasa Raghavan</h3>
 <p>
